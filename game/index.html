@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VELA BAY — an open-world crime story</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<!-- ============ HUD ============ -->
+<div id="hud" class="hidden">
+  <div id="topleft">
+    <div id="minimapwrap">
+      <canvas id="minimap" width="176" height="176"></canvas>
+      <div id="north">N</div>
+    </div>
+    <div id="healthwrap"><div id="healthfill"></div></div>
+  </div>
+
+  <div id="topright">
+    <div id="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+    <div id="crimetoast"></div>
+    <div id="cash">$0</div>
+  </div>
+
+  <div id="objective">
+    <div id="objtitle">VELA BAY</div>
+    <div id="objtext"></div>
+  </div>
+
+  <div id="banner" class="hidden">
+    <div id="bannertext"></div>
+    <div id="bannersub"></div>
+  </div>
+
+  <div id="crosshair" class="hidden">+</div>
+  <div id="hitmarker" class="hidden">✕</div>
+  <div id="prompt" class="hidden"></div>
+
+  <div id="dialog" class="hidden">
+    <span id="dialogwho"></span>
+    <span id="dialogtext"></span>
+  </div>
+
+  <div id="speedo" class="hidden">
+    <div id="speedval">0</div>
+    <div id="speedunit">KM/H</div>
+    <div id="carname"></div>
+  </div>
+
+  <div id="ammo">12 / ∞</div>
+  <div id="vignette"></div>
+</div>
+
+<!-- ============ START SCREEN ============ -->
+<div id="menu">
+  <div id="menubox">
+    <div id="title">VELA BAY</div>
+    <div id="tagline">AN OPEN-WORLD CRIME STORY</div>
+    <p id="story">Fresh out of Chino Dunes prison, <b>Kai Moreno</b> just wanted a quiet life in the
+    sun-soaked bay. But fixer <b>Dahlia Cruz</b> has other plans — and the Vela Bay PD never forgets a face.
+    Steal anything with wheels, run from the heat, and take the city one job at a time.</p>
+    <div id="controls">
+      <div><b>WASD</b> move / drive</div>
+      <div><b>MOUSE</b> look / aim</div>
+      <div><b>CLICK</b> shoot</div>
+      <div><b>R-CLICK</b> aim</div>
+      <div><b>E / F</b> enter / carjack</div>
+      <div><b>SPACE</b> handbrake / jump</div>
+      <div><b>SHIFT</b> sprint</div>
+      <div><b>R</b> reload</div>
+      <div><b>ESC</b> pause / save</div>
+    </div>
+    <div id="menubuttons">
+      <button id="btnNew" class="big">PLAY</button>
+      <button id="btnContinue" class="big ghost hidden">CONTINUE</button>
+    </div>
+    <div id="menufoot">an original world · runs fully offline · keyboard + mouse</div>
+  </div>
+</div>
+
+<!-- ============ PAUSE ============ -->
+<div id="pause" class="hidden">
+  <div class="panel">
+    <div class="paneltitle">PAUSED</div>
+    <button id="btnResume" class="big">RESUME</button>
+    <button id="btnSave" class="big ghost">SAVE GAME</button>
+    <button id="btnLoad" class="big ghost">LOAD GAME</button>
+    <button id="btnQuit" class="big ghost">QUIT TO TITLE</button>
+    <div class="panelhint">WASD drive · E carjack · click shoot · space handbrake · esc pause</div>
+  </div>
+</div>
+
+<!-- ============ DEATH ============ -->
+<div id="dead" class="hidden">
+  <div class="panel">
+    <div class="paneltitle deadtitle">LIGHTS OUT</div>
+    <p class="paneltext">Kai wakes up at the clinic. The bay takes its cut: <b>-$100</b>.</p>
+    <button id="btnRespawn" class="big">BACK ON YOUR FEET</button>
+  </div>
+</div>
+
+<div id="booterror" class="hidden"></div>
+
+<script src="vendor/three.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
+<!-- build marker -->

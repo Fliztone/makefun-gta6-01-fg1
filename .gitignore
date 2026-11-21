@@ -1,0 +1,3 @@
+# Local artifacts never belong in the entry snapshot.
+node_modules/
+out/
